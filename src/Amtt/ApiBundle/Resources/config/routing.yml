@@ -1,0 +1,3 @@
+amtt_api_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AmttApiBundle:Default:index }

@@ -1,0 +1,7 @@
+parameters:
+#    amtt_club_auto.example.class: Amtt\AppBundle\Example
+
+services:
+#    amtt_club_auto.example:
+#        class: %amtt_club_auto.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

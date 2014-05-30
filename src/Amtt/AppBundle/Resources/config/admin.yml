@@ -1,0 +1,11 @@
+services:
+    sonata.admin.post:
+        class: Amtt\AppBundle\Admin\WebsiteAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Sites Club Auto" }
+        arguments:
+            - ~
+            - Amtt\AppBundle\Entity\Website
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataAdminBundle]]
