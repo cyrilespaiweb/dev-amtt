@@ -1,36 +1,54 @@
-{% set _title        = block('title') %}
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <title>{% if _title is not empty %}
-                {{ _title }}
-           {% else %}
-                Default Title
-           {% endif%}
-    </title>
-    <meta name="description" content="{% block meta_desc %}{% endblock %}" />
-    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset('common/bootstrap/css/bootstrap.min.css') }}" media="screen" />
-    {% endblock %}
-    {% block head %}
-
-    {% endblock %}
-</head>
-<body>
+{% extends "AmttAppBundle:Shared:Layouts/base.html.twig" %}
 
 {% block body %}
-{% endblock %}
+    <header>
+        <div class="container">
+            {% block header %}
+                <p class="logo">{% block logo %}{% endblock %}</p>
 
-{% block before_close_body %}
+                <div id="call">
+                    <p class="photo"><a href="#" onclick="window.open('http://saas.voxreflex.com/popup/popup.php?lid=560&amp;key=77308b3c2335d4edc704ed1b13a91c0f&amp;popup=1','', 'width=540,height=360')"><img src="/images_local/visuel-contact-header.jpg" alt=""></a></p>
+                    <p>BESOIN D'UN CONSEIL ?</p>
+                    <p class="tel">{{ website.phone }}</p>
+                    <p>Je suis à votre écoute</p>
+                </div>
+            {% endblock %}
+        </div>
+    </header>
+
+    {% block main_nav %}
+        <nav class="collapse navbar-collapse navbar-inverse bs-navbar-collapse" role="navigation">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Club auto Fnac</a>
+                    </li>
+                    <li>
+                        <a href="#">Qui sommes-nous ?</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown">Informations</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="Informations">
+                            <li><a href="#">Informations</a></li>
+                            <li><a href="#">Questions fréquentes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+    <section id="main-container">
+        {% block main_container %}
+
+        {% endblock %}
+    </section>
+
+    <footer>
+        <div class="container">
+            {% block footer %}
+                <p>FOOTER</p>
+            {% endblock %}
+        </div>
+    </footer>
 
 {% endblock %}
-{% block javascripts %}
-    <script type="text/javascript" src="{{ asset('common/jquery/jquery-1.11.1.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('common/bootstrap/js/bootstrap.min.js') }}"></script>
-{% endblock %}
-</body>
-</html>

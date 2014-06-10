@@ -1,6 +1,7 @@
 amtt_api:
+    type: rest
     resource: "@AmttApiBundle/Resources/config/routing.yml"
-    prefix:   /api/
+    prefix:   /api
 
 amtt_club_auto:
     resource: "@AmttAppBundle/Resources/config/routing.yml"

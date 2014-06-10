@@ -1,0 +1,36 @@
+{% set _title        = block('title') %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>{% if _title is not empty %}
+                {{ _title }}
+           {% else %}
+                Default Title
+           {% endif%}
+    </title>
+    <meta name="description" content="{% block meta_desc %}{% endblock %}" />
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('common/bootstrap/css/bootstrap.min.css') }}" media="screen" />
+    {% endblock %}
+    {% block head %}
+
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+{% endblock %}
+
+{% block before_close_body %}
+
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('common/jquery/jquery-1.11.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('common/bootstrap/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+</body>
+</html>

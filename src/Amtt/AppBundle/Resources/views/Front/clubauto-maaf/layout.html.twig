@@ -1,0 +1,49 @@
+{% extends "AmttAppBundle:Shared:Layouts/base.html.twig" %}
+
+{% block body %}
+    <header>
+        <div class="container">
+            {% block header %}
+                <p>HEADER</p>
+            {% endblock %}
+        </div>
+    </header>
+    <div class="container">
+    {% block main_nav %}
+        <nav class="collapse navbar-collapse navbar-inverse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Club auto Fnac</a>
+                </li>
+                <li>
+                    <a href="#">Qui sommes-nous ?</a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="dropdown">Informations</a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Informations">
+                        <li><a href="#">Informations</a></li>
+                        <li><a href="#">Questions fréquentes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    {% endblock %}
+    </div>
+    <section id="main-container">
+        {% block main_container %}
+        <div class="col-4-md">
+            <p>zerzrzrzzr<br />aaaaaaaaa</p>
+        </div>
+        <div class="col-8-md">
+            <p>aaaaaaaaa<br />aaaaaaaaa</p>
+        </div>
+        {% endblock %}
+    </section>
+
+    <footer>
+    {% block footer %}
+       <p>FOOTER</p>
+    {% endblock %}
+    </footer>
+
+{% endblock %}

@@ -1,12 +1,5 @@
-_welcome:
-    pattern:  /
-    defaults: { _controller: AcmeDemoBundle:Welcome:index }
-
-_demo_secured:
-    resource: "@AcmeDemoBundle/Controller/SecuredController.php"
-    type:     annotation
-
-_demo:
-    resource: "@AcmeDemoBundle/Controller/DemoController.php"
-    type:     annotation
-    prefix:   /demo
+amtt_api_brand:
+    type: rest
+    prefix: /v1
+    resource: "Amtt\ApiBundle\Controller\BrandController"
+    name_prefix:  api_1_ # naming collision

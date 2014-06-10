@@ -56,6 +56,28 @@ class Website
      */
     private $logo;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=25)
+     */
+    private $phone;
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="internal_id", type="integer")
+     */
+    private $internalId;
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="voxreflex_key", type="string", length=255)
+     */
+    private $voxreflexKey;
 
     /**
      * Get id
@@ -180,5 +202,74 @@ class Website
     public function getLogo()
     {
         return $this->logo;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Website
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set internalId
+     *
+     * @param integer $internalId
+     * @return Website
+     */
+    public function setInternalId($internalId)
+    {
+        $this->internalId = $internalId;
+
+        return $this;
+    }
+
+    /**
+     * Get internalId
+     *
+     * @return integer 
+     */
+    public function getInternalId()
+    {
+        return $this->internalId;
+    }
+
+    /**
+     * Set voxreflexKey
+     *
+     * @param string $voxreflexKey
+     * @return Website
+     */
+    public function setVoxreflexKey($voxreflexKey)
+    {
+        $this->voxreflexKey = $voxreflexKey;
+
+        return $this;
+    }
+
+    /**
+     * Get voxreflexKey
+     *
+     * @return string 
+     */
+    public function getVoxreflexKey()
+    {
+        return $this->voxreflexKey;
     }
 }
