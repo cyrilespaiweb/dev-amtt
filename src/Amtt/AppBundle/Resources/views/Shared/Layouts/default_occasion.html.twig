@@ -1,0 +1,56 @@
+{% extends "AmttAppBundle:Shared:Layouts/base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/shared_occasions/style.css') }}" media="screen" />
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="container">
+            {% block header %}
+                <p class="logo">{% block logo %}{% endblock %}</p>
+
+                <div class="call">
+                    <p class="photo"><img src="{{ asset('images/shared_occasions/visuel-contact.jpg') }}" alt=""></p>
+                    <p class="phone"><span class="glyphicon glyphicon-earphone"></span> {{ website.phone }}</p>
+                </div>
+            {% endblock %}
+        </div>
+    </header>
+
+    {% block main_nav %}
+        <div class="container">
+        <nav class="collapse navbar-collapse navbar-inverse bs-navbar-collapse" id="main-nav" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">Accueil</a>
+                </li>
+                <li>
+                    <a href="#">Qui sommes-nous ?</a>
+                </li>
+                <li>
+                    <a href="#">Commander</a>
+                </li>
+                <li>
+                    <a href="#">Financement</a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    {% endblock %}
+    <section id="main-container">
+        {% block main_container %}
+
+        {% endblock %}
+    </section>
+
+    <footer>
+        <div class="container">
+            {% block footer %}
+                <p>FOOTER</p>
+            {% endblock %}
+        </div>
+    </footer>
+
+{% endblock %}

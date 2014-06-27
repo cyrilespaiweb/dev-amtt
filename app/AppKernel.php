@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new PunkAve\FileUploaderBundle\PunkAveFileUploaderBundle(),
             new Amtt\AppBundle\AmttAppBundle(),
             new Amtt\ApiBundle\AmttApiBundle(),
         );

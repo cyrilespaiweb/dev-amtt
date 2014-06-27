@@ -5,6 +5,13 @@ parameters:
     database_name:     symfony
     database_user:     root
     database_password: ~
+    database_winelite_driver: pdo_sqlsrv
+    database_winelite_host: WINSERVER\SQLEXPRESS
+    database_winelite_port: null
+    database_winelite_name: Winelite
+    database_winelite_user: sa
+    database_winelite_password: test
+
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1

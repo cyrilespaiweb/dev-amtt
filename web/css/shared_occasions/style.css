@@ -1,0 +1,45 @@
+body{
+    background:#eee;
+}
+header{
+    padding-top:15px;
+}
+header .logo{
+    float:left;
+}
+header .logo img{
+    float:left;
+}
+div.call{
+    float:right;
+    height:110px;
+    background: url(../../images/shared_occasions/fd-contact.jpg) top right no-repeat;
+}
+div.call div.photo{
+    float:left;
+}
+div.call .photo{
+    float:left;
+
+}
+div.call .phone{
+    float:left;
+    font-size: 24px;
+    font-weight: 700;
+    color:#fff;
+    padding:0 20px;
+    line-height:110px;
+}
+.navbar {
+    min-height:44px;
+}
+#main-nav {
+    margin-top:10px;
+    background: url(../../images/shared_occasions/fd-menu.jpg) top left repeat-x;
+}
+#main-nav a{
+    color:#fff;
+}
+#main-nav a:hover{
+    opacity: 0.8;
+}

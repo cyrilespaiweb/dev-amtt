@@ -16,7 +16,8 @@ class WebsiteAdmin extends Admin
             ->add('name', 'text', array('label' => 'Nom du site'))
             ->add('uri', 'text', array('label' => 'Url du site'))
             ->add('internal_code', 'text', array('label' => 'Code interne'))
-            //->add('logo', 'file', array('label' => 'Logo du site'))
+            ->add('phone', 'text', array('label' => 'Téléphone'))
+            ->add('internal_id', 'text', array('label' => 'Numéro interne'))
             ->add('enabled')
         ;
     }
@@ -27,6 +28,7 @@ class WebsiteAdmin extends Admin
         $datagridMapper
             ->add('name')
             ->add('uri')
+            ->add('phone')
         ;
     }
 
@@ -34,9 +36,10 @@ class WebsiteAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('name')
-            ->add('uri')
+            ->addIdentifier('name',null, array('label' => 'Nom du site'))
+            ->add('uri',null, array('label' => 'Url du site'))
+            ->add('phone',null, array('label' => 'Téléphone'))
             ->add('enabled')
         ;
     }
-} 
+}

@@ -52,7 +52,7 @@ class Website
     /**
      * @var string
      *
-     * @ORM\Column(name="logo", type="string", length=150)
+     * @ORM\Column(name="logo", type="string", length=150, nullable=true)
      */
     private $logo;
 
@@ -75,7 +75,7 @@ class Website
     /**
      * @var integer
      *
-     * @ORM\Column(name="voxreflex_key", type="string", length=255)
+     * @ORM\Column(name="voxreflex_key", type="string", length=255, nullable=true)
      */
     private $voxreflexKey;
 
@@ -271,5 +271,10 @@ class Website
     public function getVoxreflexKey()
     {
         return $this->voxreflexKey;
+    }
+
+    public function __toString()
+    {
+        return ($this->getName().' ('.$this->getUri().')') ? : '';
     }
 }

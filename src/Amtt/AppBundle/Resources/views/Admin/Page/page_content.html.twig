@@ -1,0 +1,53 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% set modal_id = "modal_block" %}
+{% set modal_title = "Ajouter un cloc de contenu" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css"  href="{{ asset('css/admin.css') }}"  />
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('common/tinymce/tinymce.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('common/js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('common/js/page-manager.js') }}"></script>
+    <script type="text/javascript">
+    var tinymceOpt = {
+        selector: "textarea.richEditor",
+        plugins: [
+            "advlist autolink lists link charmap preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+        ],
+        valid_elements : '*[*]',
+        menubar: false,
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | source | code"
+    };
+
+    $(document).ready(function (){
+        var options = {
+            dataSourceListBlock: "{{ admin.generateObjectUrl('blockList', object) }}",
+            dataSourceEditBlock: "{{ admin.generateObjectUrl('editBlock', object) }}",
+            dataSourceCreateBlock: "{{ admin.generateObjectUrl('createBlock', object) }}",
+            dataSourceDeleteBlock: "{{ admin.generateObjectUrl('deleteBlock', object) }}"
+        };
+        PageManager.init(options);
+
+        $('.modal').on('show.bs.modal', function (e) {
+            tinymce.init(tinymceOpt);
+        })
+    });
+    </script>
+{% endblock %}
+
+{% block sonata_admin_content %}
+    {{ parent() }}
+
+    <div id="content_list">
+    </div>
+
+    {% include "AmttAppBundle:Admin:modal.html.twig" with {'modal_id': modal_id, 'modal_title': modal_title} %}
+    {% include "AmttAppBundle:Admin:modal.html.twig" with {'modal_id': 'dataConfirmModal', 'modal_title': 'Confirmation de suppression'} %}
+
+{% endblock sonata_admin_content %}

@@ -1,0 +1,10 @@
+#content_list .page-content-block{
+    border:1px dashed #6b6b6b;
+    padding-bottom:15px;
+}
+.margin-top{
+    margin-top:15px;
+}
+.margin-bottom{
+    margin-bottom:15px;
+}

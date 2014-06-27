@@ -1,0 +1,14 @@
+<div class="col-md-{{ block.columnWidth }} page-content-block">
+    {% if block.title is not empty %}
+        <h3 class="page-content-block-title">{{ block.title }}</h3>
+    {% endif %}
+    <div class="page-content-block-text">
+        {{ block.content|raw }}
+    </div>
+    {% if show_actions %}
+        <div class="col-md-12" style="border:#333">
+           <button class="pull-left btn btn-danger btn-sm delete deleteConfirm" type="button" data-id="{{ block.id }}" data-message="Voulez-vous vraiment supprimer ce bloc ?" > <i class="glyphicon glyphicon-trash"></i> Supprimer</button>
+           <button class="btn btn-default btn-sm update pull-right" type="button" data-id="{{ block.id }}" ><i class="glyphicon glyphicon-pencil"></i> MODIFIER</button>
+        </div>
+    {% endif %}
+</div>

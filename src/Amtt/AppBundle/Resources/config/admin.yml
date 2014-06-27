@@ -1,5 +1,5 @@
 services:
-    sonata.admin.post:
+    sonata.admin.website:
         class: Amtt\AppBundle\Admin\WebsiteAdmin
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Content", label: "Sites Club Auto" }
@@ -9,3 +9,26 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [SonataAdminBundle]]
+
+    sonata.admin.page:
+        class: Amtt\AppBundle\Admin\PageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contenu", label: "Gérer les pages" }
+        arguments:
+            - ~
+            - Amtt\AppBundle\Entity\Page
+            - AmttAppBundle:PageCRUD
+        calls:
+            - [ setTranslationDomain, [SonataAdminBundle]]
+
+    sonata.admin.page_block:
+        class: Amtt\AppBundle\Admin\BlockAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm }
+        arguments:
+            - ~
+            - Amtt\AppBundle\Entity\Block
+            - AmttAppBundle:BlockCRUD
+        calls:
+            - [ setTranslationDomain, [SonataAdminBundle]]
+            - [ setTemplate, [edit, AmttAppBundle:Admin/Block:edit.html.twig]]

@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -65,6 +65,15 @@ doctrine:
                 user:     "%database_winelite_user%"
                 password: "%database_winelite_password%"
                 charset:  UTF8
+
+            cardiff:
+                driver:   "%database_cardiff_driver%"
+                host:     "%database_cardiff_host%"
+                port:     "%database_cardiff_port%"
+                dbname:   "%database_cardiff_name%"
+                user:     "%database_cardiff_user%"
+                password: "%database_cardiff_password%"
+                charset:  UTF8
         types:
             json: Sonata\Doctrine\Types\JsonType
           # if using pdo_sqlite as your database driver, add the path in parameters.yml
@@ -79,6 +88,8 @@ doctrine:
                 mappings:
                     AmttAppBundle:  ~
                     ApplicationSonataUserBundle:  ~
+                    SonataUserBundle: ~
+                    FOSUserBundle: ~
             winelite:
                 connection: winelite
                 mappings:
@@ -98,6 +109,20 @@ services:
        class: Amtt\AppBundle\Listener\DomainListener
        tags:
            - { name: kernel.event_listener, event: kernel.request, method: onDomainParse }
+
+   gedmo.listener.timestampable:
+       class: Gedmo\Timestampable\TimestampableListener
+       tags:
+           - { name: doctrine.event_subscriber, connection: default }
+       calls:
+           - [ setAnnotationReader, [ @annotation_reader ] ]
+
+   gedmo.listener.sluggable:
+       class: Gedmo\Sluggable\SluggableListener
+       tags:
+           - { name: doctrine.event_subscriber, connection: default }
+       calls:
+           - [ setAnnotationReader, [ @annotation_reader ] ]
 
 fos_user:
     db_driver: orm
@@ -122,18 +147,16 @@ sonata_block:
         sonata.block.service.rss:
         sonata.user.block.menu:    # used to display the menu in profile pages
         sonata.user.block.account: # used to display menu option (login option)
-        # Some specific block from the SonataMediaBundle
-        #sonata.media.block.media:
-        #sonata.media.block.gallery:
-        #sonata.media.block.feature_media:
 
 sonata_user:
-    security_acl: true
+    security_acl: false
     manager_type: orm
 
 sonata_admin:
     title: Amtt Admin
     title_logo: Amtt Admin
+    templates:
+        edit: AmttAppBundle:Admin:edit.html.twig
     security:
         handler: sonata.admin.security.handler.acl
         # acl security information

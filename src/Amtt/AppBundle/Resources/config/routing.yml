@@ -1,3 +1,11 @@
-club_auto:
+club_auto_home:
     path: /
+    defaults: { _controller: AmttAppBundle:Home:index }
+
+occasion_home:
+    path: /voitures-occasion-{slug}
+    defaults: { _controller: AmttAppBundle:Home:index }
+
+occasion_home:
+    path: /voitures-occasion-{slug}
     defaults: { _controller: AmttAppBundle:Home:index }

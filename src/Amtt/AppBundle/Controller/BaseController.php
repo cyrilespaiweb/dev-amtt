@@ -21,7 +21,7 @@ class BaseController extends Controller
         }
 
         $this->container->get('twig')->addGlobal('website', $website);
-        $this->container->get('twig.loader')->addPath($this->get('kernel')->getRootDir() .'/../src/Amtt/AppBundle/Resources/views/Front/clubauto-fnac');
+        $this->container->get('twig.loader')->addPath($this->get('kernel')->getRootDir() .'/../src/Amtt/AppBundle/Resources/views/Front/occasionsclic');
         return parent::render($view, $parameters, $response);
     }
 }

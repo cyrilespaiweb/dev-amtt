@@ -1,0 +1,35 @@
+{% if _show_actions is empty %}
+    {% set _show_actions = false %}
+{% endif%}
+
+{% if _show_actions %}
+    <div class="col-md-12">
+        <button class="btn btn-primary pull-right margin-bottom create"><span class="glyphicon glyphicon-plus"></span> Ajouter un bloc de contenu</button>
+    </div>
+{% endif%}
+
+{% if blocks is not empty %}
+    {% set count = 0 %}
+    {% for block in blocks %}
+
+        {% if count == 0 %}
+            <div class="row">
+        {% elseif count + block.columnWidth > 12 %}
+            </div>
+            <div class="row">
+            {% set count = 0 %}
+        {% endif %}
+
+        {% include "AmttAppBundle:Shared:PageBlock/default.html.twig" with {'block': block, 'show_actions' : _show_actions} %}
+
+        {% set count = count + block.columnWidth %}
+    {% endfor %}
+    </div>
+
+    {% if _show_actions %}
+        <div class="col-md-12">
+            <button class="btn btn-primary pull-right margin-top create"><span class="glyphicon glyphicon-plus"></span> Ajouter un bloc de contenu</button>
+        </div>
+    {% endif%}
+
+{% endif %}
