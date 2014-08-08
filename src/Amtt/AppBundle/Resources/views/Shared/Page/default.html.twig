@@ -1,4 +1,4 @@
-{% if _show_actions is empty %}
+{% if _show_actions is not defined or _show_actions is empty %}
     {% set _show_actions = false %}
 {% endif%}
 
@@ -8,7 +8,7 @@
     </div>
 {% endif%}
 
-{% if blocks is not empty %}
+{% if page.blocks is not empty %}
     {% set count = 0 %}
     {% for block in blocks %}
 

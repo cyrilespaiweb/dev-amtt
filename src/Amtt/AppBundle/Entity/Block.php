@@ -22,7 +22,7 @@ class Block
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Amtt\AppBundle\Entity\Page")
+     * @ORM\ManyToOne(targetEntity="Amtt\AppBundle\Entity\Page", inversedBy="blocks")
      * @ORM\JoinColumn(nullable=false)
      */
     private $page;

@@ -33,8 +33,8 @@ class PageAdmin extends Admin
             ->add('meta_description', 'text', array('label' => 'Balise meta description de la page', 'required' => false))
             ->add('meta_keywords', 'text', array('label' => 'Balise meta keyword de la page', 'required' => false))
             ->add('position', 'text', array('label' => 'Position'))
-            ->add('enabled', 'checkbox', array('label' => 'Active'))
-            ->add('default', 'checkbox', array('label' => 'Page par défaut'))
+            ->add('enabled', 'checkbox', array('label' => 'Active', 'required' => false))
+            ->add('default', 'checkbox', array('label' => 'Page par défaut', 'required' => false))
         ;
     }
 
@@ -53,6 +53,7 @@ class PageAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name',null, array('label' => 'Nom de la page'))
+            ->add('website.name',null, array('label' => 'Site'))
             ->add('slug',null, array('label' => 'Url de la page'))
             ->add('enabled')
             ->add('default')

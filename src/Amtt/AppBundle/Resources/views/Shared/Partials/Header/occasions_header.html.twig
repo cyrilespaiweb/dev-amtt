@@ -1,0 +1,12 @@
+<nav class="collapse navbar-collapse navbar-inverse bs-navbar-collapse" id="main-nav" role="navigation">
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="{{ path('occasionsclic_home') }}">Accueil</a>
+        </li>
+        {% for page in page_list %}
+            <li>
+                <a href="{{ path('occasionsclic_home') }}">{{ page.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

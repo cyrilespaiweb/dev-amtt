@@ -1,0 +1,302 @@
+<ol class="breadcrumb">
+    <li><a href="{{ path('occasions_home') }}">Accueil</a></li>
+    <li><a href="{{ path('occasions_search') }}">{{ product.marque }} occasions</a></li>
+    <li class="active">{{ product.marque }} {{ product.modele }} {{ product.version }}</li>
+</ol>
+<h1 class="title-gb-black">Occasion <strong>{{ product.marque }}</strong> {{ product.modele }} <span>{{ product.version }}</span></h1>
+
+<div class="col-md-5">
+    <h2>GALERIE</h2>
+    <div class="col-md-12">
+        <img src="http://www.occasionsclic.com/includes/images.php?action=grd&chemin=planetvo/vaa6_086199_01_hd.jpg" alt="" />
+    </div>
+</div>
+<div class="col-md-7">
+    <h2>CARACTÉRISTIQUES <span class="price">Prix net TTC : {{ product.prix_public }} €<sup>*</sup></span></h2>
+    <table class="table table-striped table-condensed">
+        {% if product.type is not empty %}
+            <tr>
+                <td>Type</td>
+                <td>{{ product.type }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.genre is not empty %}
+            <tr>
+                <td>Genre</td>
+                <td>{{ product.genre }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.type is not empty %}
+            <tr>
+                <td>Type</td>
+                <td>{{ product.type }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.famille is not empty %}
+            <tr>
+                <td>Famille</td>
+                <td>{{ product.famille }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.type_mine is not empty %}
+            <tr>
+                <td>Type mine</td>
+                <td>{{ product.type_mine }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.energie is not empty %}
+            <tr>
+                <td>Energie</td>
+                <td>{{ product.energie }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.millesime is not empty %}
+            <tr>
+                <td>Année ou Millésime</td>
+                <td>{{ product.millesime }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.kilometrage is not empty %}
+            <tr>
+                <td>Kilométrage</td>
+                <td>{{ product.kilometrage }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.type_kilometrage is not empty %}
+            <tr>
+                <td>Type Kilométrage</td>
+                <td>{{ product.type_kilometrage }} km</td>
+            </tr>
+        {%  endif %}
+        <tr>
+            <td>Garantie kilométrage</td>
+            <td>{{ product.kilometrage_garantie ? 'Oui' : 'Non' }}</td>
+        </tr>
+        <tr>
+            <td>Première main</td>
+            <td>{{ product.premiere_main ? 'Oui' : 'Non' }}</td>
+        </tr>
+        {% if product.carrosserie is not empty %}
+            <tr>
+                <td>Carrosserie</td>
+                <td>{{ product.carrosserie }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.couleur is not empty %}
+            <tr>
+                <td>Couleur</td>
+                <td>{{ product.couleur }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.couleur_interieure is not empty %}
+            <tr>
+                <td>Couleur intérieure</td>
+                <td>{{ product.couleur_interieure }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.sellerie is not empty %}
+            <tr>
+                <td>Sellerie</td>
+                <td>{{ product.sellerie }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.habitable_utilitaire is not empty %}
+            <tr>
+                <td>Habitable Utilitaire</td>
+                <td>{{ product.habitable_utilitaire }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.audio is not empty %}
+            <tr>
+                <td>Audio</td>
+                <td>{{ product.audio }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.puissance_fiscale is not empty %}
+            <tr>
+                <td>Puissance fiscale</td>
+                <td>{{ product.puissance_fiscale }} CH</td>
+            </tr>
+        {%  endif %}
+        {% if product.puissance_kw is not empty %}
+            <tr>
+                <td>Puissance moteur</td>
+                <td>{{ product.puissance_kw }} kW</td>
+            </tr>
+        {%  endif %}
+        {% if product.puissance_kw is not empty %}
+            <tr>
+                <td>Puissance moteur</td>
+                <td>{{ product.puissance_kw }} kW</td>
+            </tr>
+        {%  endif %}
+        {% if product.puissance_din is not empty %}
+            <tr>
+                <td>CV Din</td>
+                <td>{{ product.puissance_din }} CV</td>
+            </tr>
+        {%  endif %}
+        {% if product.cylindree is not empty %}
+            <tr>
+                <td>Cylindrée</td>
+                <td>{{ product.cylindree }} cm<sup>3</sup></td>
+            </tr>
+        {%  endif %}
+        {% if product.nb_cylindres is not empty %}
+            <tr>
+                <td>Nombre de cylindres</td>
+                <td>{{ product.nb_cylindres }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.acceleration is not empty %}
+            <tr>
+                <td>Accélération</td>
+                <td>{{ product.acceleration }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.vitesse_max is not empty %}
+            <tr>
+                <td>Vitesse max</td>
+                <td>{{ product.vitesse_max }} km/h</td>
+            </tr>
+        {%  endif %}
+        {% if product.boite_vitesse is not empty %}
+            <tr>
+                <td>Boite de vitesse</td>
+                <td>{{ product.boite_vitesse }} km/h</td>
+            </tr>
+        {%  endif %}
+        {% if product.nb_rapports is not empty %}
+            <tr>
+                <td>Nombre de rapports</td>
+                <td>{{ product.nb_rapports }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.nb_portes is not empty %}
+            <tr>
+                <td>Nombre de portes</td>
+                <td>{{ product.nb_portes }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.nb_places is not empty %}
+            <tr>
+                <td>Nombre de places</td>
+                <td>{{ product.nb_places }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.lib_pneu is not empty %}
+            <tr>
+                <td>Pneus</td>
+                <td>{{ product.lib_pneu }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.lib_pneu is not empty %}
+            <tr>
+                <td>Pneus</td>
+                <td>{{ product.lib_pneu }}</td>
+            </tr>
+        {%  endif %}
+        <tr>
+            <td>Toit ouvrant</td>
+            <td>{{ product.toit_ouvrant ? 'Oui' : 'Non' }}</td>
+        </tr>
+        <tr>
+            <td>Climatisation</td>
+            <td>{{ product.climatisation ? 'Oui' : 'Non' }}</td>
+        </tr>
+        <tr>
+            <td>Avec TVA</td>
+            <td>{{ product.avec_tva ? 'Oui' : 'Non' }}</td>
+        </tr>
+        {% if product.garantie is not empty %}
+            <tr>
+                <td>Garantie</td>
+                <td>{{ product.garantie }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.duree_garantie is not empty %}
+            <tr>
+                <td>Durée garantie</td>
+                <td>{{ product.duree_garantie }} mois</td>
+            </tr>
+        {%  endif %}
+        {% if product.garantie_garage is not empty %}
+            <tr>
+                <td>Garantie garage</td>
+                <td>{{ product.garantie_garage }} mois</td>
+            </tr>
+        {%  endif %}
+        {% if product.norme_co2 is not empty %}
+            <tr>
+                <td>Norme CO²</td>
+                <td>{{ product.norme_co2 }}</td>
+            </tr>
+        {%  endif %}
+        {% if product.taux_co2 is not empty %}
+            <tr>
+                <td>Taux CO²</td>
+                <td>{{ product.taux_co2 }} g/km</td>
+            </tr>
+        {%  endif %}
+        {% if product.reservoir is not empty %}
+            <tr>
+                <td>Réservoir</td>
+                <td>{{ product.reservoir }} L</td>
+            </tr>
+        {%  endif %}
+        {% if product.conso_mixte is not empty %}
+            <tr>
+                <td>Consommation mixte</td>
+                <td>{{ product.conso_mixte }} L/100km</td>
+            </tr>
+        {%  endif %}
+        {% if product.conso_urbaine is not empty %}
+            <tr>
+                <td>Consommation urbaine</td>
+                <td>{{ product.conso_urbaine }} L/100km</td>
+            </tr>
+        {%  endif %}
+        {% if product.conso_extra is not empty %}
+            <tr>
+                <td>Consommation extra urbaine</td>
+                <td>{{ product.conso_extra }} L/100km</td>
+            </tr>
+        {%  endif %}
+        {% if product.longueur is not empty %}
+            <tr>
+                <td>Longueur</td>
+                <td>{{ product.longueur }} mm</td>
+            </tr>
+        {%  endif %}
+        {% if product.largeur is not empty %}
+            <tr>
+                <td>Largeur</td>
+                <td>{{ product.largeur }} mm</td>
+            </tr>
+        {%  endif %}
+        {% if product.hauteur is not empty %}
+            <tr>
+                <td>Hauteur</td>
+                <td>{{ product.hauteur }} mm</td>
+            </tr>
+        {%  endif %}
+        {% if product.poids is not empty %}
+            <tr>
+                <td>Poids</td>
+                <td>{{ product.poids }} kg</td>
+            </tr>
+        {%  endif %}
+        {% if product.poids_max is not empty %}
+            <tr>
+                <td>Poids maximum</td>
+                <td>{{ product.poids_max }} kg</td>
+            </tr>
+        {%  endif %}
+        {% if product.statut_stock is not empty %}
+            <tr>
+                <td>Statut stock</td>
+                <td>{{ product.statut_stock }}</td>
+            </tr>
+        {%  endif %}
+    </table>
+</div>

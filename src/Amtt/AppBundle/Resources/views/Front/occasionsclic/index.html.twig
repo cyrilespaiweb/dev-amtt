@@ -1,1 +1,22 @@
 {% extends "layout.html.twig" %}
+
+{% block main_container %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{ render(controller('AmttAppBundle:Occasions/Brand:logoList')) }}
+            </div>
+        </div>
+        <section id="top_products" class="col-md-6">
+            <h2>LE TOP DES ANNONCES DE VOITURE D'OCCASION</h2>
+        </section>
+        <section id="home_search" class="col-md-6 search-container">
+            <div class="content">
+                <h2>SÉLECTIONNEZ VOTRE VÉHICULE PARMI 5132 OFFRES D'OCCASION</h2>
+
+                {{ render(controller('AmttAppBundle:Occasions/Search:home')) }}
+            </div>
+        </section>
+    </div>
+{% endblock %}

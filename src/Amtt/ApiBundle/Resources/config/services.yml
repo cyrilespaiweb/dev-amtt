@@ -2,9 +2,6 @@ parameters:
 #    amtt_api.example.class: Amtt\ApiBundle\Example
 
 services:
-   brand:
-      class: Amtt\ApiBundle\Service\Brand
-      arguments: ['@doctrine']
 #    amtt_api.example:
 #        class: %amtt_api.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]

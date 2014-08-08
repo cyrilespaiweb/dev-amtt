@@ -1,0 +1,28 @@
+{% if pagination.pageCount > 1 %}
+
+    <ul class="pagination">
+        {% if pagination.first is defined and pagination.current != pagination.first %}
+            <li class="first"><a href="{{ pagination.path }}&page={{ pagination.first }}">Première page</a></li>
+        {% endif %}
+
+        {% if pagination.previous is not empty %}
+            <li class="previous"><a class="hidden-xs" href="{{ pagination.path }}&page={{ pagination.previous }}">&lt;</a></li>
+        {% endif %}
+
+        {% for page in 1..pagination.pageCount %}
+            {% if page != pagination.current %}
+                <li class="page"><a href="{{ pagination.path }}&page={{ page }}">{{ page }}</a></li>
+            {% else %}
+                <li class="current active"><a>{{ page }} <span class="sr-only">(pagination.current)</span></a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if pagination.next is not empty %}
+            <li class="next"><a class="hidden-xs" href="{{ pagination.path }}&page={{ pagination.next }}">&gt;</a></li>
+        {% endif %}
+
+        {% if pagination.next is not empty %}
+            <li class="last"><a href="{{ pagination.path }}&page={{ pagination.pageCount }}">Dernière page</a></li>
+        {% endif %}
+    </ul>
+{% endif %}

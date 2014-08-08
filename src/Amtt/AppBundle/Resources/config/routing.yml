@@ -1,11 +1,34 @@
-club_auto_home:
-    path: /
-    defaults: { _controller: AmttAppBundle:Home:index }
+occasions_home:
+    pattern:   /
+    defaults:  { _controller: "AmttAppBundle:Occasions/Home:index" }
 
-occasion_home:
-    path: /voitures-occasion-{slug}
-    defaults: { _controller: AmttAppBundle:Home:index }
+occasions_search:
+    pattern:   /search
+    defaults:  { _controller: "AmttAppBundle:Occasions/Search:index" }
 
-occasion_home:
-    path: /voitures-occasion-{slug}
-    defaults: { _controller: AmttAppBundle:Home:index }
+occasions_product:
+    pattern:   /occasion-{slug}-{id}.php
+    defaults:  { _controller: "AmttAppBundle:Occasions/Product:show" }
+    requirements:
+        slug: "[a-zA-Z0-9\-\.]+"
+        id: \d+
+
+#occasions_page:
+#    pattern:   /{slug}
+#    defaults:  { _controller: "AmttAppBundle:Page:show" }
+
+#occasions_brand_list:
+    #pattern: /brand/
+
+#club_auto_home:
+#    path: /
+#    defaults: { _controller: AmttAppBundle:Home:index }
+
+#occasion_home:
+#    path: /voitures-occasion-{slug}
+#    defaults: { _controller: AmttAppBundle:Home:index }
+
+#occasion_home:
+#    path: /voitures-occasion-{slug}
+#    defaults: { _controller: AmttAppBundle:Home:index }
+

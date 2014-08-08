@@ -56,7 +56,6 @@ doctrine:
                 user:     "%database_user%"
                 password: "%database_password%"
                 charset:  UTF8
-
             winelite:
                 driver:   "%database_winelite_driver%"
                 host:     "%database_winelite_host%"
@@ -65,7 +64,6 @@ doctrine:
                 user:     "%database_winelite_user%"
                 password: "%database_winelite_password%"
                 charset:  UTF8
-
             cardiff:
                 driver:   "%database_cardiff_driver%"
                 host:     "%database_cardiff_host%"
@@ -94,6 +92,11 @@ doctrine:
                 connection: winelite
                 mappings:
                     AmttApiBundle: ~
+
+            cardiff:
+                connection: cardiff
+                mappings:
+                    AmttAppBundle:  ~
         auto_generate_proxy_classes: "%kernel.debug%"
 
 # Swiftmailer Configuration
@@ -109,6 +112,8 @@ services:
        class: Amtt\AppBundle\Listener\DomainListener
        tags:
            - { name: kernel.event_listener, event: kernel.request, method: onDomainParse }
+       arguments:
+               entityManager: "@doctrine.orm.entity_manager"
 
    gedmo.listener.timestampable:
        class: Gedmo\Timestampable\TimestampableListener
@@ -154,7 +159,7 @@ sonata_user:
 
 sonata_admin:
     title: Amtt Admin
-    title_logo: Amtt Admin
+    title_logo: logo-clubauto.png
     templates:
         edit: AmttAppBundle:Admin:edit.html.twig
     security:
@@ -170,3 +175,7 @@ sonata_admin:
         #admin_permissions: [CREATE, LIST, DELETE, UNDELETE, EXPORT, OPERATOR, MASTER]
         # permission related to the objects
         #object_permissions: [VIEW, EDIT, DELETE, UNDELETE, OPERATOR, MASTER, OWNER]
+
+knp_paginator:
+    template:
+         pagination: AmttAppBundle:Common:bootstrap_paginator.html.twig

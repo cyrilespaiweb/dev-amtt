@@ -4,6 +4,10 @@
     {{ parent() }}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/shared_occasions/style.css') }}" media="screen" />
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/shared_occasions/main.js') }}"></script>
+{% endblock %}
 
 {% block body %}
     <header>
@@ -21,22 +25,7 @@
 
     {% block main_nav %}
         <div class="container">
-        <nav class="collapse navbar-collapse navbar-inverse bs-navbar-collapse" id="main-nav" role="navigation">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="/">Accueil</a>
-                </li>
-                <li>
-                    <a href="#">Qui sommes-nous ?</a>
-                </li>
-                <li>
-                    <a href="#">Commander</a>
-                </li>
-                <li>
-                    <a href="#">Financement</a>
-                </li>
-            </ul>
-        </nav>
+            {% include "AmttAppBundle:Shared:Partials/Nav/occasions_top_nav.html.twig" %}
         </div>
     {% endblock %}
     <section id="main-container">
@@ -48,7 +37,7 @@
     <footer>
         <div class="container">
             {% block footer %}
-                <p>FOOTER</p>
+                {% include "AmttAppBundle:Shared:Partials/Footer/occasions_footer.html.twig" %}
             {% endblock %}
         </div>
     </footer>

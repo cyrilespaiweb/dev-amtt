@@ -30,7 +30,8 @@
         "friendsofsymfony/rest-bundle": "1.3.*",
         "jms/serializer-bundle": "0.13.*@dev",
         "punkave/symfony2-file-uploader-bundle": "dev-master",
-        "gedmo/doctrine-extensions": "dev-master"
+        "gedmo/doctrine-extensions": "dev-master",
+        "knplabs/knp-paginator-bundle": "~2.4"
     },
     "scripts": {
         "post-install-cmd": [

@@ -1,0 +1,51 @@
+{{ form_start(form, {'method': 'GET' , 'attr': {'class': 'form-horizontal', 'id' : 'form-search'} }) }}
+    <div class="col-md-3">
+        <div class="form-group">
+            {{ form_widget(form.brand, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            {{ form_widget(form.model, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            {{ form_widget(form.version, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+           {{ form_widget(form.fuel, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="col-md-5 control-label no-padding">Buget Min.</label>
+            <div class="input-group col-md-7 no-padding">
+                {{ form_widget(form.price_min, { 'attr': {'class': 'form-control'} }) }}<span class="input-group-addon">€</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="col-md-5 control-label no-padding">Buget Max.</label>
+            <div class="input-group col-md-7 no-padding">
+              {{ form_widget(form.price_max, { 'attr': {'class': 'form-control'} }) }}<span class="input-group-addon">€</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            {{ form_widget(form.km_range, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            {{ form_widget(form.department, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    </div>
+<div class="col-md-12">
+    <button class="btn btn-red pull-right">RECHERCHER</button>
+</div>
+{{ form_end(form) }}

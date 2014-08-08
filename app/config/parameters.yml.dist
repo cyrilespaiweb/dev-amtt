@@ -11,7 +11,12 @@ parameters:
     database_winelite_name: Winelite
     database_winelite_user: sa
     database_winelite_password: test
-
+    database_cardiff_driver: pdo_mysql
+    database_cardiff_host: 127.0.0.1
+    database_cardiff_port: null
+    database_cardiff_name: cardiff
+    database_cardiff_user: root
+    database_cardiff_password: null
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1

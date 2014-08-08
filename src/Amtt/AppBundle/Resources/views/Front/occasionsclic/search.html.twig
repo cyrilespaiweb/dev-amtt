@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block main_container %}
+
+
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="">Accueil Occasions Clic</a></li>
+            <li class="active">{{ title }}</li>
+        </ol>
+        <section id="search" class="col-md-12 search-container">
+            <div class="content">
+                <h2>SÉLECTIONNEZ VOTRE VÉHICULE PARMI 5132 OFFRES D'OCCASION</h2>
+
+                {% include 'AmttAppBundle:Shared/Search:occasions_search.html.twig' with {'form' : form} %}
+            </div>
+        </section>
+        <section id="product_list" class="bg-content">
+            {% include "AmttAppBundle:Shared:Product/List/occasions_table.html.twig" with {'products': products} %}
+        </section>
+    </div>
+
+{% endblock %}

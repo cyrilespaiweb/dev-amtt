@@ -1,6 +1,64 @@
+/*---GENERAL---*/
 body{
     background:#eee;
 }
+ul,ol ,li{
+    list-style-type:none;
+}
+.margin-top{
+    margin-top:15px;
+}
+.pagination>li>a,
+.pagination>li>span{
+    color:#b21212;
+}
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+    background-color:#b21212;
+    border-color:#b21212;
+}
+.breadcrumb{
+    background:none;
+    color:#131415;
+}
+.breadcrumb a{
+    color:#131415;
+}
+.breadcrumb li.active{
+    color:#b21212;
+}
+.breadcrumb>li+li:before {
+    color:#131415;
+}
+.bg-content{
+    float:left;
+    background: #e0dedc;
+    padding:20px;
+    width: 100%;
+}
+.title-gb-black{
+    color:#fff;
+    background: #222 url(../../images/shared_occasions/fd-menu.jpg) top left repeat-x;
+    line-height: 44px;
+    height: 44px;
+    font-size: 18px;
+}
+.title-gb-black strong{
+    color: #b21212;
+}
+.title-gb-black span{
+    color: #acacac;
+    font-size: 14px;
+}
+.no-padding{
+    padding:0;
+}
+
+/*---LAYOUT---*/
 header{
     padding-top:15px;
 }
@@ -35,11 +93,94 @@ div.call .phone{
 }
 #main-nav {
     margin-top:10px;
-    background: url(../../images/shared_occasions/fd-menu.jpg) top left repeat-x;
+    background: #222 url(../../images/shared_occasions/fd-menu.jpg) top left repeat-x;
 }
 #main-nav a{
     color:#fff;
 }
 #main-nav a:hover{
     opacity: 0.8;
+}
+
+/*---BRAND LOGO LIST---*/
+#brand_logo_list ul{
+    float:left;
+    width:100%;
+    padding:10px 0;
+    margin:0;
+    background:#fff;
+}
+#brand_logo_list ul li{
+    float:left;
+    width:7.1%;
+    text-align:center;
+}
+
+/*---HOME---*/
+#top_products{
+    padding:0;
+}
+#top_products h2{
+    height:44px;
+    line-height:44px;
+    font-size:16px;
+    color:#fff;
+    padding-left:15px;
+    background: #222 url(../../images/shared_occasions/fd-menu.jpg) top left repeat-x;
+    border-bottom: 3px solid #ada7a4;
+    margin-top:0;
+}
+
+/*---SEARCH FORM---*/
+.search-container{
+    padding-right:0;
+    padding-left:0;
+    padding-bottom:20px;
+    background: url(../../images/shared_occasions/fd-search.jpg) top left repeat;
+}
+.search-container .content{
+    padding:0 15px;
+}
+.search-container h2{
+    font-size:15px;
+    color:#fff;
+}
+.search-container .form-group label{
+    color:#fff;
+    font-weight:400;
+}
+#search .form-group{
+    margin-right:15px;
+}
+label.no-padding{
+    text-align:left !important;
+}
+/*---TABLE PRODUCT LIST---*/
+#product_list table{
+    float:left;
+    background:#fff;
+}
+#product_list th{
+    background:#780d0d;
+    color:#fff;
+    text-align:center;
+    vertical-align: middle;
+}
+#product_list td a{
+    color:#b21212;
+}
+#product_list tr:hover > th{
+    background:none;
+}
+#product_list tr:hover > td{
+    background:#780d0d;
+    color:#fff;
+}
+#product_list tr:hover a{
+    color:#fff;
+}
+/*---FOOTER---*/
+footer .content{
+    padding:20px 0 15px 0;
+    background: #e0dedc;
 }

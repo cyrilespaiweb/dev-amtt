@@ -2,6 +2,35 @@ parameters:
 #    amtt_club_auto.example.class: Amtt\AppBundle\Example
 
 services:
+  amtt.twig.amttapp_extension:
+      class: Amtt\AppBundle\Twig\AmttAppExtension
+      tags:
+          - { name: twig.extension }
+  occasions_service:
+        class:     Amtt\AppBundle\Service\Occasions\BaseService
+        abstract:  true
+        arguments: [@doctrine]
+
+  occasions_model:
+        class: Amtt\AppBundle\Service\Occasions\Model
+        parent: occasions_service
+
+  occasions_version:
+        class: Amtt\AppBundle\Service\Occasions\Version
+        parent: occasions_service
+
+  occasions_vehicule:
+        class: Amtt\AppBundle\Service\Occasions\Vehicule
+        parent: occasions_service
+
+  occasions_fuel:
+        class: Amtt\AppBundle\Service\Occasions\Fuel
+        parent: occasions_service
+
+  occasions_brand:
+        class: Amtt\AppBundle\Service\Occasions\Brand
+        parent: occasions_service
+
 #    amtt_club_auto.example:
 #        class: %amtt_club_auto.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]

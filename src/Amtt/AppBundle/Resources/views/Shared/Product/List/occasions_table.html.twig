@@ -1,0 +1,34 @@
+{% if products is not empty %}
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Modèle</th>
+                <th>Version</th>
+                <th>Première immatriculation</th>
+                <th>Kilomètrage</th>
+                <th>Région</th>
+                <th>Prix net TTC</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for product in products %}
+        <tr>
+            <td>{{ product.modele }}</td>
+            <td>{{ product.version }}</td>
+            <td>{{ product.date_mec|date("d/m/Y") }}</td>
+            <td>{{ product.kilometrage }} km</td>
+            <td>{{ product.societe_code_postal }}</td>
+            <td>{{ product.prix_public }} €</td>
+            <td><a href="{{ url_occasion(product) }}">Détail</a></td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation pull-right">
+        {% include "AmttAppBundle:Common:bootstrap_custom_paginator.html.twig" with {'pagination': pagination} %}
+    </div>
+{% else %}
+    <p>Aucun résultat trouvé pour votre recherche</p>
+{% endif %}

@@ -1,0 +1,9 @@
+{% extends "layout.html.twig" %}
+
+{% block main_container %}
+    <section id="product_details">
+        <div class="container">
+            {% include "AmttAppBundle:Shared:Product/occasions_details.html.twig" with {'product': product} %}
+        </div>
+    </section>
+{% endblock %}

@@ -50,9 +50,11 @@ class PageCRUDController  extends CRUDController {
             ->getRepository('AmttAppBundle:Block')
             ->findByPage($object->getId(),array('position' => 'ASC'));
 
+        $object->getBlocks();
+
         $html = $this->render('AmttAppBundle:Admin:Page/block_list.html.twig', array(
             'object' => $object,
-            'blocks' => $blocks
+            'page' => $object
         ))->getContent();
 
 

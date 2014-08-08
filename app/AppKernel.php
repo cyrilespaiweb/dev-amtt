@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new PunkAve\FileUploaderBundle\PunkAveFileUploaderBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Amtt\AppBundle\AmttAppBundle(),
             new Amtt\ApiBundle\AmttApiBundle(),
         );

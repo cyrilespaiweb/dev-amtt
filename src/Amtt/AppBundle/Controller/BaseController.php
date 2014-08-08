@@ -10,18 +10,9 @@ class BaseController extends Controller
 {
     public function render($view, array $parameters = array(), Response $response = null)
     {
-        $website = $this->getDoctrine()
-            ->getRepository('AmttAppBundle:Website')
-            ->find(1);
-
-        if (!$website) {
-            throw $this->createNotFoundException(
-                'Aucun website trouvé '
-            );
-        }
-
+        $website = $this->container->get('session')->get('website');
         $this->container->get('twig')->addGlobal('website', $website);
-        $this->container->get('twig.loader')->addPath($this->get('kernel')->getRootDir() .'/../src/Amtt/AppBundle/Resources/views/Front/occasionsclic');
+        $this->container->get('twig.loader')->addPath($this->get('kernel')->getRootDir() .'/../src/Amtt/AppBundle/Resources/views/Front/'.$website->getInternalCode());
         return parent::render($view, $parameters, $response);
     }
 }
